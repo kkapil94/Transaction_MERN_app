@@ -9,7 +9,7 @@ export default function Home() {
   const [editTrans,setEditTrans] = useState({})
   async function getTransactions(){
     const token = Cookies.get('token')
-    const body = await fetch("http://localhost:4000/transactions",{
+    const body = await fetch(`${process.env.REACT_API_URL}/transactions`,{
      headers: {Authorization:`bearer ${token}`}
     })
     const transaction = await body.json()

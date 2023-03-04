@@ -17,7 +17,7 @@ export default function TransList({trans,getTransactions,setEditTrans}) {
   const remove =async (id)=>{
     console.log(id)
     if(!window.confirm("Are you sure?")) return
-    const res = await fetch(`http://localhost:4000/transactions/${id}`,{
+    const res = await fetch(`${process.env.REACT_API_URL}/${id}`,{
       method:"DELETE",
       headers:{
         Authorization:`bearer ${token}`
