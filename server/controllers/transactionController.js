@@ -29,6 +29,7 @@ export const create = async(req,res)=>{
 export const update = async(req,res)=>{
     const {amount,desc,date} = req.body
     const id = req.params.id
+
     const update = await Transaction.updateOne({_id:id},{amount,desc,date})
     res.json({message:'success'})
 }
